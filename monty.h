@@ -65,10 +65,12 @@ void free_cmd(char **cmd);
 int lineInput(char **line_arr, stack_t **stack, unsigned int ln);
 int cmd_len(char *line);
 stack_t *add_dnodeint(stack_t **head, const int n);
+void handle_usage(void);
+void open_file(const char *filename);
 void free_dlistint(stack_t *head);
 void push(stack_t **stack, unsigned int ln);
 void pall(stack_t **stack, unsigned int ln);
-
-
+void pint (stack_t **stack, unsigned int line_number);
+void pop (stack_t **stack, unsigned int line_number);
 
 #endif

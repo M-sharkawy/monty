@@ -10,27 +10,19 @@
 
 stack_t *add_dnodeint(stack_t **head, const int n)
 {
-	stack_t *temp = *head, *newNode;
-
-	newNode = malloc(sizeof(stack_t));
+	 stack_t *newNode = malloc(sizeof(stack_t));
 	if (!newNode)
 		return (NULL);
 
 	newNode->n = n;
-	newNode->next = NULL;
-	if (!(*head))
+	newNode->next = *head;
+	newNode->prev = NULL;
+
+	if (*head)
 	{
-		newNode->prev = (*head);
-		(*head) = newNode;
-	} else
-	{
-		while (temp->next)
-		{
-			temp = temp->next;
-		}
-		temp->next = newNode;
-		newNode->prev = temp;
+		(*head)->prev = newNode;
 	}
+	*head = newNode;
 
 	return (newNode);
 }

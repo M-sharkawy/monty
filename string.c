@@ -34,9 +34,9 @@ int str_cmp(const char *str_one, const char *str_two, int bytes)
 	for (index = 0; index < bytes; index++)
 	{
 		if (str_one[index] != str_two[index])
-      {
+		{
 			return (1);
-      }
+			}
 	}
 	return (0);
 }
@@ -58,10 +58,10 @@ char *str_dup(const char *str)
 
 	newStr = (char *)malloc(sizeof(char) * (str_len(str) + 1));
 	if (!newStr)
-   {
+	{
 		perror("Error: malloc failed");
 		exit(EXIT_FAILURE);
-	}
+		}
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
