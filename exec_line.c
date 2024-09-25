@@ -130,6 +130,8 @@ int lineInput(char **line_arr, stack_t **stack, unsigned int ln)
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
+		{"add", add},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 
