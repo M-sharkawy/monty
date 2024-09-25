@@ -71,6 +71,7 @@ julien@ubuntu:~/monty$ ./monty bytecodes/000.m
 2
 1
 0
+
 </code></pre>
 
 <h3>Command-Line Arguments:</h3>
@@ -171,6 +172,7 @@ julien@ubuntu:~/monty$ ./monty bytecodes/000.m
     </tr>
   </tbody>
 </table>
+
 
 <h2 id="memory-management">Memory Management</h2>
 <p>All dynamic memory allocation is handled using <code>malloc</code>. It is essential to free all allocated memory to prevent leaks. The Monty program does not use functions like <code>realloc</code> or
