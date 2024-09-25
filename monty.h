@@ -19,9 +19,9 @@
 
 typedef struct stack_s
 {
-   int n;
-   struct stack_s *prev;
-   struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -35,24 +35,22 @@ typedef struct stack_s
 
 typedef struct instruction_s
 {
-   char *opcode;
-   void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /**
  * struct global_v - Struct to hold all prog variables
  * @o_bytes: open file bytes
- * @r_bytes: read file bytes
  * @ln: number of lines
- * @line: current line
  * @line_arr: line array
  */
 
 typedef struct global_v
 {
-   FILE *o_bytes;
-   unsigned int ln;
-   char **line_arr;
+	FILE *o_bytes;
+	unsigned int ln;
+	char **line_arr;
 } global_v;
 
 extern global_v g_vars;
@@ -64,6 +62,8 @@ char **cmd_arr(const char *cmd, stack_t **stack);
 void free_cmd(char **cmd);
 int lineInput(char **line_arr, stack_t **stack, unsigned int ln);
 int cmd_len(char *line);
+void free_cmd_elements(char **cmd_arr, char *cmd_cpy, stack_t **stack);
+long int _atoi(char *str);
 stack_t *add_dnodeint(stack_t **head, const int n);
 void handle_usage(void);
 void open_file(const char *filename);
