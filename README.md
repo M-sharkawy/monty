@@ -15,17 +15,6 @@
   <li><a >Author(s)</a></li>
   <li><a >License</a></li>
 </ul>
-## Table of Contents
-- [Description](#description)
-- [Monty Bytecode Files](#monty-bytecode-files)
-- [The Monty Program](#the-monty-program)
-- [Usage](#usage)
-- [Error Handling](#error-handling)
-- [Supported Opcodes](#supported-opcodes)
-- [Memory Management](#memory-management)
-- [Contributing](#contributing)
-- [Author(s)](#authors)
-- [License](#license)
 
 <h2 id="description">Description</h2>
 <p>Monty 0.98 is a scripting language built around a stack structure, providing specific instructions for stack manipulation. This project aims to create an interpreter that reads Monty ByteCodes and performs the appropriate operations on a stack.</p>
