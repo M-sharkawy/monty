@@ -11,7 +11,7 @@ Supported Opcodes
 Memory Management
 Contributing
 Author(s)
-License
+
 Description
 Monty 0.98 is a scripting language built around a stack structure, providing specific instructions for stack manipulation. This project aims to create an interpreter that reads Monty ByteCodes and performs the appropriate operations on a stack.
 
@@ -120,5 +120,3 @@ Open a pull request for review.
 AUTHOR(s)
 This program was written by mostafa El-Sharkawy and Martain George
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
