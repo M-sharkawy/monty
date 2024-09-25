@@ -24,9 +24,9 @@ void push(stack_t **stack, unsigned int ln)
 		exit(EXIT_FAILURE);
 	}
 
-	number = _atoi(lineArr[1]);
+	number = atoi(lineArr[1]);
 	if (number < 0 ||
-	(number == 0 && str_cmp(lineArr[1], "a", str_len("a")) == 0))
+	(str_cmp(lineArr[1], "a", str_len("a")) == 0))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", ln);
 		if (*stack)

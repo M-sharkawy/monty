@@ -63,7 +63,6 @@ void free_cmd(char **cmd);
 int lineInput(char **line_arr, stack_t **stack, unsigned int ln);
 int cmd_len(char *line);
 void free_cmd_elements(char **cmd_arr, char *cmd_cpy, stack_t **stack);
-long int _atoi(char *str);
 stack_t *add_dnodeint(stack_t **head, const int n);
 void handle_usage(void);
 void open_file(const char *filename);
