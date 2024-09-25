@@ -34,7 +34,8 @@ int main(int argc, char **argv)
 		status = lineInput(g_vars.line_arr, &stack, g_vars.ln);
 		if (status < 0)
 		{
-			fprintf(stderr, "L%d: unknown instruction %s\n", g_vars.ln, g_vars.line_arr[0]);
+			fprintf(stderr, "L%d: unknown instruction %s\n", g_vars.ln,
+			g_vars.line_arr[0]);
 			free_dlistint(stack);
 			free_cmd(g_vars.line_arr);
 			fclose(g_vars.o_bytes);

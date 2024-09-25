@@ -40,9 +40,13 @@ char **cmd_arr(const char *cmd, stack_t **stack)
 	char *token, **cmdArr, *cmdCpy;
 	int length, i = 0, tokLen;
 
+	if (!cmd)
+		return (NULL);
+
 	cmdCpy = str_dup(cmd);
 	length = str_len(cmdCpy);
-	if (length == 0)
+	token = strtok(cmdCpy, " \t\n");
+	if (length == 0 || (!token || token[0] == 35))
 	{
 		free(cmdCpy);
 		return (NULL);
@@ -56,7 +60,6 @@ char **cmd_arr(const char *cmd, stack_t **stack)
 		fclose(g_vars.o_bytes);
 		return (NULL);
 	}
-	token = strtok(cmdCpy, " \t\n");
 
 	while (token)
 	{
@@ -64,20 +67,13 @@ char **cmd_arr(const char *cmd, stack_t **stack)
 		cmdArr[i] = malloc(sizeof(char) * (tokLen));
 		if (!cmdArr[i])
 		{
-			perror("Error: malloc failed");
-			free_cmd(cmdArr);
-			free(cmdCpy);
-			if (*stack)
-				free_dlistint(*stack);
-
-			fclose(g_vars.o_bytes);
+			free_cmd_elements(cmdArr, cmdCpy, stack);
 			return (NULL);
 		}
 		strcpy(cmdArr[i], token);
 		i++;
 		token = strtok(NULL, " \t");
 	}
-
 	cmdArr[i] = NULL;
 	free(cmdCpy);
 	return (cmdArr);
@@ -118,7 +114,13 @@ void free_dlistint(stack_t *head)
 }
 
 /**
- * lineInput - 
+ * lineInput - Function to choose the suitable helper function
+ * @line_arr: command array
+ * @stack: stack linked list
+ * @ln: line number
+ *
+ * Return: (0) Succes
+ * otherwise - (-1)
  */
 int lineInput(char **line_arr, stack_t **stack, unsigned int ln)
 {
