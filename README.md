@@ -169,5 +169,5 @@ git push origin feature-branch
 
 ## Author(s)
 
-This program was written by Mostafa El-Sharkawy and Martain George.
+This program was written by [Mostafa El-Sharkawy](https://github.com/M-sharkawy) and [Martain George](https://github.com/martingeorge191110).
 
